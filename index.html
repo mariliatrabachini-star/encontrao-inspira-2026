@@ -9,80 +9,68 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand-blue: #13ABF5; --brand-cyan: #27E4DD; --brand-navy: #032F5B; --brand-purple: #8066FF;
-      --neutral-1: #FFFFFF; --neutral-2: #F6F7F9; --neutral-3: #EEF0F3; --neutral-4: #E8E9EC;
-      --neutral-5: #DCDEE0; --neutral-8: #8E9399; --neutral-9: #656C74; --neutral-10: #363F49;
-      --navy-1: #185796; --navy-2: #11508F; --navy-3: #0B4987; --navy-4: #07417A; --navy-5: #04386B;
-      --navy-6: #032F5B; --navy-7: #012A54; --navy-10: #011B36;
+      --brand-blue: #13ABF5; --brand-cyan: #27E4DD; --brand-navy: #032F5B;
+      --navy-3: #0B4987; --navy-4: #07417A; --navy-5: #04386B; --navy-6: #032F5B; --navy-7: #012A54; --navy-10: #011B36;
       --sky-1: #F7FBFF; --sky-2: #F0F7FF; --sky-3: #E5F2FF; --sky-4: #D6EAFF; --sky-6: #B8DAFF;
       --success-1: #E8FAF6; --success-5: #18AB8D; --success-8: #057861;
-      --warning-1: #FFF7E5; --warning-8: #E39600;
-      --critical-1: #FFEBED; --critical-6: #CF1329;
+      --warning-1: #FFF7E5;
       --text-primary: #363F49; --text-secondary: #656C74; --text-tertiary: #8E9399;
-      --text-accent: #0B4987; --text-invert: #FFFFFF;
-      --surface-primary: #FFFFFF; --surface-secondary: #F6F7F9; --surface-info: #E5F2FF;
+      --text-invert: #FFFFFF;
+      --surface-secondary: #F6F7F9; --surface-info: #E5F2FF;
       --border-faint: #E8E9EC; --border-discreet: #DCDEE0;
       --btn-accent: #0B4987; --btn-accent-hover: #04386B;
-      --card-default: #FFFFFF; --card-hover: #F0F7FF;
+      --card-default: #FFFFFF;
       --font-primary: 'Poppins', sans-serif; --font-secondary: 'Source Sans 3', sans-serif;
-      --br-xs: 4px; --br-sm: 8px; --br-lg: 12px; --br-xl: 16px; --br-full: 9999px;
+      --br-sm: 8px; --br-lg: 12px; --br-xl: 16px; --br-full: 9999px;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-primary); background-color: var(--surface-secondary); color: var(--text-primary); min-height: 100vh; }
 
-    /* HERO */
     .hero { background: linear-gradient(135deg, var(--navy-10) 0%, var(--navy-6) 50%, var(--navy-3) 100%); color: var(--text-invert); padding: 48px 24px 0; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(19,171,245,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(39,228,221,0.12) 0%, transparent 45%), radial-gradient(circle at 60% 80%, rgba(128,102,255,0.1) 0%, transparent 40%); pointer-events: none; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(19,171,245,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(39,228,221,0.12) 0%, transparent 45%); pointer-events: none; }
     .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(19,171,245,0.15); border: 1px solid rgba(19,171,245,0.3); border-radius: var(--br-full); padding: 4px 16px; font-size: 12px; font-weight: 500; color: var(--brand-blue); letter-spacing: 0.5px; margin-bottom: 20px; position: relative; }
     .hero-title { font-size: clamp(32px, 5vw, 52px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px; position: relative; }
     .hero-title span { background: linear-gradient(90deg, var(--brand-blue), var(--brand-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-subtitle { font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.8); margin-bottom: 32px; position: relative; max-width: 680px; margin-left: auto; margin-right: auto; line-height: 1.7; }
     .countdown-bar { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 32px; }
     .countdown-item { text-align: center; }
     .countdown-num { font-size: 36px; font-weight: 700; color: var(--brand-blue); line-height: 1; display: block; }
     .countdown-label { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.8px; }
 
-    /* TABS */
-    .tabs-wrapper { background: var(--surface-primary); border-bottom: 1px solid var(--border-faint); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(1,27,54,0.06); }
+    .tabs-wrapper { background: #fff; border-bottom: 1px solid var(--border-faint); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(1,27,54,0.06); }
     .tabs-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; overflow-x: auto; scrollbar-width: none; }
     .tabs-inner::-webkit-scrollbar { display: none; }
     .tab-btn { display: flex; align-items: center; gap: 8px; padding: 16px 20px; font-family: var(--font-primary); font-size: 13px; font-weight: 500; color: var(--text-secondary); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; position: relative; top: 1px; }
-    .tab-btn:hover { color: var(--text-accent); background: var(--sky-1); }
+    .tab-btn:hover { color: var(--btn-accent); background: var(--sky-1); }
     .tab-btn.active { color: var(--navy-3); border-bottom-color: var(--brand-blue); font-weight: 600; }
 
-    /* MAIN */
     .main { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
     .section-title { font-size: 24px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; letter-spacing: -0.01em; }
     .section-desc { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
 
-    /* CARDS */
     .card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 24px; transition: box-shadow 0.2s, border-color 0.2s; }
     .card:hover { box-shadow: 0 4px 16px rgba(1,27,54,0.08); border-color: var(--border-discreet); }
     .card-title { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
     .card-body { font-size: 14px; color: var(--text-secondary); line-height: 1.6; font-family: var(--font-secondary); }
 
-    /* GRIDS */
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
     @media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 500px) { .grid-4 { grid-template-columns: 1fr; } }
 
-    /* ALERTS */
     .alert { display: flex; gap: 12px; padding: 16px 20px; border-radius: var(--br-lg); font-size: 14px; line-height: 1.55; margin-bottom: 20px; font-family: var(--font-secondary); }
     .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
     .alert-info { background: var(--surface-info); border: 1px solid var(--sky-6); color: var(--navy-3); }
     .alert-warning { background: var(--warning-1); border: 1px solid #FFE9BD; color: #7A4A00; }
     .alert-success { background: var(--success-1); border: 1px solid #B7EDE2; color: var(--success-8); }
 
-    /* TIMELINE */
     .timeline { position: relative; }
     .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--brand-blue), var(--brand-cyan)); border-radius: 2px; }
     .timeline-item { display: flex; gap: 20px; padding-bottom: 24px; position: relative; }
     .timeline-dot { width: 40px; height: 40px; border-radius: var(--br-full); background: var(--navy-6); border: 3px solid var(--brand-blue); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; position: relative; z-index: 1; }
-    .timeline-content { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 20px 24px; flex: 1; transition: box-shadow 0.2s; }
+    .timeline-content { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 20px 24px; flex: 1; }
     .timeline-content:hover { box-shadow: 0 4px 16px rgba(1,27,54,0.08); }
     .timeline-date { font-size: 11px; font-weight: 600; color: var(--brand-blue); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; }
     .timeline-title { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; }
@@ -94,7 +82,6 @@
     .tag-yellow { background: var(--warning-1); color: #7A4A00; }
     .tag-green { background: var(--success-1); color: var(--success-8); }
 
-    /* HOTEL */
     .hotel-card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); overflow: hidden; transition: box-shadow 0.2s; }
     .hotel-card:hover { box-shadow: 0 8px 24px rgba(1,27,54,0.1); }
     .hotel-card-header { padding: 20px 24px; background: linear-gradient(135deg, var(--navy-7), var(--navy-5)); color: var(--text-invert); }
@@ -103,31 +90,28 @@
     .hotel-card-body { padding: 24px; }
     .hotel-info-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-faint); font-size: 14px; font-family: var(--font-secondary); }
     .hotel-info-row:last-child { border-bottom: none; }
-    .hotel-info-row .info-label { font-weight: 600; color: var(--text-secondary); min-width: 120px; font-size: 13px; }
+    .hotel-info-row .info-label { font-weight: 600; color: var(--text-secondary); min-width: 110px; font-size: 13px; }
     .hotel-info-row .info-value { color: var(--text-primary); line-height: 1.5; }
 
-    /* STEPS */
     .steps { display: flex; flex-direction: column; gap: 20px; }
     .step-item { display: flex; gap: 16px; align-items: flex-start; }
     .step-num { width: 32px; height: 32px; border-radius: var(--br-full); background: var(--btn-accent); color: var(--text-invert); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
     .step-content { flex: 1; }
     .step-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
-    .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; font-family: var(--font-secondary); }
+    .step-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.65; font-family: var(--font-secondary); }
     .step-desc ul { margin-top: 8px; padding-left: 18px; }
     .step-desc ul li { margin-bottom: 4px; }
     .step-desc a { color: var(--navy-3); font-weight: 600; }
 
-    /* CHECKLIST */
     .checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-    .checklist li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-secondary); font-family: var(--font-secondary); padding: 8px 12px; border-radius: var(--br-sm); transition: background 0.15s; cursor: default; }
+    .checklist li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-secondary); font-family: var(--font-secondary); padding: 8px 12px; border-radius: var(--br-sm); transition: background 0.15s; }
     .checklist li:hover { background: var(--surface-secondary); }
     .checklist li .check-icon { width: 20px; height: 20px; border-radius: 6px; border: 2px solid var(--border-discreet); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; font-size: 11px; cursor: pointer; }
     .checklist li.checked .check-icon { background: var(--success-5); border-color: var(--success-5); color: white; }
     .checklist li.checked span { text-decoration: line-through; color: var(--text-tertiary); }
     .checklist-group-title { font-size: 12px; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.8px; margin: 20px 0 8px; }
 
-    /* RECADOS */
-    .recado-card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 20px 24px; transition: box-shadow 0.2s, border-color 0.2s; }
+    .recado-card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 20px 24px; transition: box-shadow 0.2s; }
     .recado-card:hover { box-shadow: 0 4px 16px rgba(1,27,54,0.08); border-color: var(--border-discreet); }
     .recado-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
     .recado-author { display: flex; align-items: center; gap: 8px; }
@@ -139,9 +123,8 @@
     .recado-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 13px; font-weight: 500; color: var(--navy-3); text-decoration: none; padding: 8px 12px; background: var(--surface-info); border-radius: var(--br-sm); transition: background 0.2s; }
     .recado-link:hover { background: var(--sky-4); }
 
-    /* FAQ */
     .faq-list { display: flex; flex-direction: column; gap: 12px; }
-    .faq-item { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); overflow: hidden; transition: box-shadow 0.2s; }
+    .faq-item { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); overflow: hidden; }
     .faq-item:hover { box-shadow: 0 4px 12px rgba(1,27,54,0.07); }
     .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; cursor: pointer; user-select: none; gap: 16px; }
     .faq-q-text { font-size: 15px; font-weight: 500; color: var(--text-primary); line-height: 1.4; }
@@ -150,7 +133,6 @@
     .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; padding: 0 24px; font-size: 14px; color: var(--text-secondary); line-height: 1.65; font-family: var(--font-secondary); }
     .faq-item.open .faq-answer { max-height: 400px; padding: 16px 24px 20px; border-top: 1px solid var(--border-faint); }
 
-    /* CONTACTS */
     .contact-card { display: flex; align-items: center; gap: 16px; background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 16px 20px; transition: box-shadow 0.2s; }
     .contact-card:hover { box-shadow: 0 4px 12px rgba(1,27,54,0.08); }
     .contact-info { flex: 1; }
@@ -158,23 +140,32 @@
     .contact-role { font-size: 13px; color: var(--text-secondary); font-family: var(--font-secondary); }
     .contact-channel { font-size: 12px; font-weight: 600; color: var(--navy-3); background: var(--surface-info); padding: 4px 10px; border-radius: var(--br-full); }
 
-    /* DESTINATION */
     .destination-hero { background: linear-gradient(135deg, var(--navy-7), var(--navy-4)); border-radius: var(--br-xl); padding: 32px; color: var(--text-invert); margin-bottom: 24px; position: relative; overflow: hidden; }
     .destination-hero::before { content: '🏨'; position: absolute; right: 32px; top: 50%; transform: translateY(-50%); font-size: 80px; opacity: 0.15; }
     .destination-hero h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-    .destination-hero p { font-size: 14px; color: rgba(255,255,255,0.7); font-family: var(--font-secondary); line-height: 1.6; max-width: 500px; }
+    .destination-hero p { font-size: 14px; color: rgba(255,255,255,0.8); font-family: var(--font-secondary); line-height: 1.6; max-width: 500px; }
     .amenity-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .amenity { display: flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 500; padding: 5px 12px; border-radius: var(--br-full); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
 
-    /* MISC */
+    .lazer-card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 20px; text-align: center; transition: box-shadow 0.2s; }
+    .lazer-card:hover { box-shadow: 0 4px 16px rgba(1,27,54,0.08); }
+    .lazer-icon { font-size: 32px; margin-bottom: 12px; }
+    .lazer-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 6px; }
+    .lazer-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; font-family: var(--font-secondary); }
+
     .divider { border: none; border-top: 1px solid var(--border-faint); margin: 32px 0; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: var(--br-lg); font-family: var(--font-primary); font-size: 13px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; border: none; }
     .btn-primary { background: var(--btn-accent); color: var(--text-invert); }
     .btn-primary:hover { background: var(--btn-accent-hover); }
+
     .overview-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin-bottom: 32px; }
     .stat-card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); padding: 20px; text-align: center; }
     .stat-value { font-size: 28px; font-weight: 700; color: var(--navy-3); line-height: 1; margin-bottom: 6px; }
     .stat-label { font-size: 12px; color: var(--text-secondary); font-family: var(--font-secondary); }
+
+    .welcome-box { background: linear-gradient(135deg, var(--sky-3), var(--sky-1)); border: 1px solid var(--sky-6); border-radius: var(--br-xl); padding: 28px 32px; margin-bottom: 32px; }
+    .welcome-box p { font-size: 15px; color: var(--navy-3); line-height: 1.75; font-family: var(--font-secondary); }
+
     .footer { background: var(--navy-10); color: rgba(255,255,255,0.5); text-align: center; padding: 24px; font-size: 13px; font-family: var(--font-secondary); margin-top: 64px; }
     .footer strong { color: rgba(255,255,255,0.8); }
 
@@ -190,6 +181,7 @@
       .tab-btn { padding: 12px 16px; font-size: 12px; }
       .timeline::before { left: 16px; }
       .timeline-dot { width: 32px; height: 32px; }
+      .welcome-box { padding: 20px; }
     }
   </style>
 </head>
@@ -198,7 +190,6 @@
 <div class="hero">
   <div class="hero-badge">✨ Segundo Encontrão do Ano</div>
   <h1 class="hero-title">Encontrão <span>Inspira</span> 2026</h1>
-  <p class="hero-subtitle">Nosso próximo Encontrão já tem data marcada! De 15 a 19 de junho, estaremos juntos presencialmente para mais um momento de conexão, planejamento e alinhamento do próximo ciclo da Inspira.<br><br>Esse é o nosso encontro semestral para revisarmos tudo o que vivemos nos últimos meses, fortalecer a integração do time e nos prepararmos para os próximos desafios e oportunidades. Preparados?</p>
   <div class="countdown-bar">
     <div class="countdown-item"><span class="countdown-num" id="cd-days">--</span><span class="countdown-label">Dias</span></div>
     <div class="countdown-item"><span class="countdown-num" id="cd-hours">--</span><span class="countdown-label">Horas</span></div>
@@ -224,15 +215,22 @@
   <!-- INÍCIO -->
   <div class="tab-panel active" id="tab-inicio">
     <h2 class="section-title">Bem-vindo ao Encontrão! 🎉</h2>
-    <p class="section-desc">Tudo que você precisa saber sobre o nosso segundo Encontrão do ano está aqui. Navegue pelas abas para conferir a agenda, hospedagem, como chegar e muito mais.</p>
+
+    <div class="welcome-box">
+      <p>Nosso próximo Encontrão já tem data marcada! De 15 a 19 de junho, estaremos juntos presencialmente para mais um momento de conexão, planejamento e alinhamento do próximo ciclo da Inspira.<br><br>
+      Esse é o nosso encontro semestral para revisarmos tudo o que vivemos nos últimos meses, fortalecer a integração do time e nos prepararmos para os próximos desafios e oportunidades. <strong>Preparados?</strong> 💙</p>
+    </div>
+
     <div class="overview-stats">
       <div class="stat-card"><div class="stat-value">5</div><div class="stat-label">Dias de evento</div></div>
       <div class="stat-card"><div class="stat-value">2</div><div class="stat-label">Cidades</div></div>
       <div class="stat-card"><div class="stat-value">1</div><div class="stat-label">Happy Hour 🍔</div></div>
       <div class="stat-card"><div class="stat-value">∞</div><div class="stat-label">Energia Inspira</div></div>
     </div>
-    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div><strong>Novo no Encontrão?</strong> Esta página centraliza todas as informações do evento. Use as abas acima para navegar. Em caso de dúvidas, consulte a aba FAQ ou fale com a organização.</div></div>
+
+    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>Esta página centraliza todas as informações do evento. Use as abas acima para navegar. Em caso de dúvidas, consulte a aba FAQ ou fale com a organização.</div></div>
     <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div><strong>Atenção:</strong> Compra de passagens deve ser feita pela plataforma <strong>Onfly</strong> até <strong>31/05/2026</strong>. Consulte a aba "Como Chegar" para o passo a passo.</div></div>
+
     <h3 style="font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:20px;">Resumo da programação</h3>
     <div class="grid-4">
       <div class="card"><div style="font-size:24px;margin-bottom:12px;">📍</div><div class="card-title">São Paulo — 15 e 16/06</div><div class="card-body">Chegada e acomodação para quem vem de fora. Dia 16 de integração e planejamento semestral.</div></div>
@@ -267,12 +265,12 @@
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-dot">🌿</div>
+        <div class="timeline-dot">🚌</div>
         <div class="timeline-content">
           <div class="timeline-date">17 de Junho — Quarta-feira</div>
           <div class="timeline-title">Saída para o Hotel Villa Santo Agostinho</div>
-          <div class="timeline-body">Saída pela manhã (horário a confirmar) para Bragança Paulista. Dia em auditório reservado para continuidade do planejamento e integração.</div>
-          <span class="timeline-tag tag-cyan">🌿 Bragança Paulista</span><span class="timeline-tag tag-yellow">⏰ Horário a confirmar</span>
+          <div class="timeline-body">Nos encontraremos às <strong>8h</strong> (local do ponto de encontro a confirmar) para saída em conjunto. O trajeto será realizado em <strong>ônibus fretado exclusivo da Inspira</strong> para todo o time. Tempo aproximado de deslocamento: 2 horas.</div>
+          <span class="timeline-tag tag-cyan">🌿 Bragança Paulista</span><span class="timeline-tag tag-yellow">📍 Ponto de encontro a confirmar</span>
         </div>
       </div>
       <div class="timeline-item">
@@ -289,7 +287,7 @@
         <div class="timeline-content">
           <div class="timeline-date">19 de Junho — Sexta-feira</div>
           <div class="timeline-title">Café da manhã e retorno</div>
-          <div class="timeline-body">Café da manhã e check-out às <strong>11h</strong>. Retorno para São Paulo (~2h). Até o próximo Encontrão! 💙</div>
+          <div class="timeline-body">Café da manhã e check-out às <strong>11h</strong>. Retorno para São Paulo no ônibus fretado (~2h). Até o próximo Encontrão! 💙</div>
           <span class="timeline-tag tag-blue">🏙️ Retorno SP</span><span class="timeline-tag tag-cyan">Check-out 11h</span>
         </div>
       </div>
@@ -300,8 +298,7 @@
   <div class="tab-panel" id="tab-chegada">
     <h2 class="section-title">Como Chegar</h2>
     <p class="section-desc">Informações sobre compra de passagens pela Onfly, fluxo de aprovação, política de viagens e logística de deslocamento.</p>
-
-    <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div><strong>Prazo importante:</strong> Cada colaborador deve escolher e reservar sua passagem até <strong>31/05/2026</strong>. Passagens fora da plataforma Onfly não serão reembolsadas.</div></div>
+    <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div><strong>Prazo importante:</strong> Cada colaborador deve reservar sua passagem até <strong>31/05/2026</strong>. Passagens fora da plataforma Onfly não serão reembolsadas.</div></div>
 
     <div class="card" style="margin-bottom:32px;">
       <div class="steps">
@@ -310,7 +307,7 @@
           <div class="step-num">1</div>
           <div class="step-content">
             <div class="step-title">Reservas para o Encontrão 06/2026</div>
-            <div class="step-desc">O período de compra começa agora e será utilizado para aquisição das passagens do Encontrão. Cada colaborador deve escolher sua passagem até o dia <strong>31/05/2026</strong>. Após selecionar seu voo, a reserva será enviada automaticamente ao seu gestor para aprovação. O time de People seguirá apoiando com as informações de logística de chegada e saída do evento.</div>
+            <div class="step-desc">O período de compra começa agora. Cada colaborador deve escolher sua passagem até o dia <strong>31/05/2026</strong>. Após selecionar seu voo, a reserva será enviada automaticamente à sua liderança para aprovação. O time de People seguirá apoiando com as informações de logística de chegada e saída do evento.</div>
           </div>
         </div>
 
@@ -318,7 +315,9 @@
           <div class="step-num">2</div>
           <div class="step-content">
             <div class="step-title">Fluxo de Aprovação</div>
-            <div class="step-desc">Toda reserva só será emitida após passar pelo aprovador. Quando uma reserva for criada, o aprovador receberá um e-mail automático da Onfly para aprovar.<br><br>⚠️ <strong>Atenção:</strong> a reserva possui um tempo limite para ser aprovada. Caso esse tempo expire, ela é cancelada e será necessário fazer uma nova reserva. Por isso, ao reservar, <strong>avise seu aprovador</strong> para que ele acompanhe a notificação e evite retrabalho.<br><br>Os líderes devem garantir que todas as passagens de seus times estejam aprovadas e emitidas até <strong>31/05/2026</strong>.</div>
+            <div class="step-desc">Toda reserva só será emitida após passar pelo aprovador (sua liderança direta). Quando uma reserva for criada, a sua liderança receberá um e-mail automático da Onfly para aprovar.<br><br>
+            ⚠️ <strong>Atenção:</strong> a reserva possui um tempo limite para ser aprovada. Caso esse tempo expire, ela é cancelada e será necessário fazer uma nova reserva. Por isso, ao reservar, <strong>avise sua liderança</strong> para que acompanhe a notificação e evite retrabalho.<br><br>
+            Os líderes devem garantir que todas as passagens de seus times estejam aprovadas e emitidas até <strong>31/05/2026</strong>.</div>
           </div>
         </div>
 
@@ -326,15 +325,13 @@
           <div class="step-num">3</div>
           <div class="step-content">
             <div class="step-title">Política de Viagens — Pontos Importantes</div>
-            <div class="step-desc">
-              <ul>
-                <li>Caso a passagem selecionada esteja fora da política corporativa, o gestor deverá avaliar caso a caso e decidir pela aprovação ou ajuste.</li>
-                <li>Neste momento, <strong>não faremos upgrades de tarifa ou compra de assentos</strong>.</li>
-                <li>Sempre priorizaremos o <strong>menor preço disponível</strong>.</li>
-                <li>Voos com escala não estão descartados e podem ser selecionados, desde que dentro de um tempo razoável de viagem.</li>
-                <li>Qualquer necessidade excepcional será tratada individualmente.</li>
-              </ul>
-            </div>
+            <div class="step-desc"><ul>
+              <li>Caso a passagem esteja fora da política corporativa, o gestor avaliará caso a caso.</li>
+              <li><strong>Não faremos upgrades de tarifa ou compra de assentos.</strong></li>
+              <li>Sempre priorizaremos o <strong>menor preço disponível</strong>.</li>
+              <li>Voos com escala são aceitos, desde que em tempo razoável de viagem.</li>
+              <li>Necessidades excepcionais serão tratadas individualmente.</li>
+            </ul></div>
           </div>
         </div>
 
@@ -342,11 +339,11 @@
           <div class="step-num">4</div>
           <div class="step-content">
             <div class="step-title">Centro de Custo e TAG obrigatórios</div>
-            <div class="step-desc">Antes de finalizar a reserva, todo colaborador deve preencher:<br><br>
-              <strong>Centro de Custo:</strong> Cada colaborador já possui um centro de custo cadastrado na plataforma. Basta selecionar o que aparece disponível na hora da reserva.<br><br>
-              <strong>TAG para controle financeiro:</strong> Para facilitar nossa apuração e fechamento, toda passagem deve ser marcada com a TAG:<br>
+            <div class="step-desc">Antes de finalizar a reserva, preencha:<br><br>
+              <strong>Centro de Custo:</strong> Selecione o seu centro de custo já cadastrado na plataforma.<br><br>
+              <strong>TAG obrigatória:</strong><br>
               <span style="display:inline-block;margin-top:8px;background:var(--surface-info);color:var(--navy-3);padding:6px 14px;border-radius:8px;font-weight:700;font-size:14px;">🏷️ Encontrão 06/2026</span><br>
-              <span style="font-size:13px;color:var(--text-tertiary);">Ela já está cadastrada e aparecerá no campo ao lado do centro de custo.</span>
+              <span style="font-size:13px;color:var(--text-tertiary);margin-top:4px;display:block;">Já está cadastrada e aparecerá no campo ao lado do centro de custo.</span>
             </div>
           </div>
         </div>
@@ -355,7 +352,7 @@
           <div class="step-num">5</div>
           <div class="step-content">
             <div class="step-title">Como acessar a plataforma</div>
-            <div class="step-desc">Você pode usar tanto pelo navegador quanto pelo celular.<br><br>
+            <div class="step-desc">Disponível pelo navegador ou celular.<br><br>
               <strong>Acesso Web:</strong> <a href="https://app.onfly.com.br/v2#/home/" target="_blank">app.onfly.com.br</a>
             </div>
           </div>
@@ -364,22 +361,12 @@
         <div class="step-item">
           <div class="step-num">6</div>
           <div class="step-content">
-            <div class="step-title">Materiais de Apoio</div>
-            <div class="step-desc">A plataforma é bastante intuitiva, mas, se precisarem, podemos compartilhar materiais de apoio e orientações mais detalhadas. Entre em contato com o time de People.</div>
-          </div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-num">7</div>
-          <div class="step-content">
             <div class="step-title">Canais de Suporte</div>
-            <div class="step-desc">Se surgir alguma dúvida durante o processo:
-              <ul>
-                <li><strong>Chat da Onfly:</strong> dúvidas sobre reserva ou funcionamento da plataforma</li>
-                <li><strong>Telefone Onfly:</strong> situações urgentes durante viagem, embarque ou check-in</li>
-                <li><strong>Time Inspira:</strong> suporte sobre política, centro de custo, TAGs e orientações gerais</li>
-              </ul>
-            </div>
+            <div class="step-desc"><ul>
+              <li><strong>Chat da Onfly:</strong> dúvidas sobre reserva ou funcionamento da plataforma</li>
+              <li><strong>Telefone Onfly:</strong> situações urgentes durante viagem, embarque ou check-in</li>
+              <li><strong>Time Inspira:</strong> política, centro de custo, TAGs e orientações gerais</li>
+            </ul></div>
           </div>
         </div>
 
@@ -388,9 +375,10 @@
 
     <hr class="divider" />
     <h3 style="font-size:18px;font-weight:600;margin-bottom:20px;color:var(--text-primary);">🚌 Deslocamento SP → Bragança Paulista (17/06)</h3>
-    <div class="grid-2">
-      <div class="card"><div class="card-title">🚐 Transfer coletivo (a confirmar)</div><div class="card-body">Será organizado um transfer saindo de SP pela manhã do dia 17/06. Horário e ponto de encontro serão divulgados em breve.</div></div>
-      <div class="card"><div class="card-title">🚗 Carro próprio</div><div class="card-body">Distância: ~100km (1h45 a 2h). Estacionamento disponível no hotel. Rota via SP-065 (Rodovia Dom Pedro I).</div></div>
+    <div class="card">
+      <div style="font-size:20px;margin-bottom:12px;">🚌</div>
+      <div class="card-title">Ônibus fretado exclusivo Inspira</div>
+      <div class="card-body">Nos encontraremos às <strong>8h</strong> (local do ponto de encontro a confirmar) para saída em conjunto com destino a Bragança Paulista, no Hotel Villa Santo Agostinho.<br><br>O tempo aproximado de deslocamento é de <strong>2 horas</strong>, e o trajeto será realizado em um ônibus fretado exclusivo da Inspira para todo o time. O ponto de encontro exato será confirmado pelo Slack em breve.</div>
     </div>
   </div>
 
@@ -399,24 +387,37 @@
     <h2 class="section-title">Hospedagem</h2>
     <p class="section-desc">Hotéis em São Paulo (15 e 16/06) e Hotel Villa Santo Agostinho em Bragança Paulista (17 a 19/06).</p>
     <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>A lista de quem fica hospedado em cada hotel será divulgada pela organização. Dúvidas? Fale com RH ou a equipe de eventos.</div></div>
+
     <div class="destination-hero">
       <h2>🌿 Hotel Villa Santo Agostinho</h2>
-      <p>Bragança Paulista, SP — 17 a 19/06 · Resort com auditório, áreas de lazer e estrutura completa para o time.</p>
+      <p>Bragança Paulista, SP — 17 a 19/06 · Resort completo com auditório, piscinas climatizadas, áreas de lazer e natureza para o time aproveitar.</p>
       <div class="amenity-list">
-        <span class="amenity">🏊 Piscina</span><span class="amenity">🍽️ Restaurante</span><span class="amenity">🏋️ Academia</span><span class="amenity">🎤 Auditório</span><span class="amenity">📶 Wi-Fi</span><span class="amenity">🚗 Estacionamento</span>
+        <span class="amenity">🏊 Piscinas climatizadas</span>
+        <span class="amenity">🍽️ Restaurante</span>
+        <span class="amenity">🏋️ Academia</span>
+        <span class="amenity">🎤 Auditório</span>
+        <span class="amenity">⚽ Quadras esportivas</span>
+        <span class="amenity">🍹 Lounge Bar</span>
+        <span class="amenity">📶 Wi-Fi</span>
+        <span class="amenity">🚗 Estacionamento</span>
       </div>
     </div>
-    <div class="grid-2" style="margin-bottom:24px;">
+
+    <div class="grid-2" style="margin-bottom:32px;">
       <div class="hotel-card">
         <div class="hotel-card-header"><h3>🌿 Hotel Villa Santo Agostinho</h3><p>Bragança Paulista, SP · 17 a 19/06</p></div>
         <div class="hotel-card-body">
-          <div class="hotel-info-row"><span class="info-label">Check-in</span><span class="info-value">17/06 — após deslocamento de SP</span></div>
+          <div class="hotel-info-row"><span class="info-label">Check-in</span><span class="info-value">17/06 — aproximadamente às 10h</span></div>
           <div class="hotel-info-row"><span class="info-label">Check-out</span><span class="info-value">19/06 — às 11h</span></div>
-          <div class="hotel-info-row"><span class="info-label">Endereço</span><span class="info-value">Bragança Paulista, SP<br><em>(Endereço completo a confirmar)</em></span></div>
-          <div class="hotel-info-row"><span class="info-label">Incluso</span><span class="info-value">Hospedagem, café da manhã, áreas do resort</span></div>
+          <div class="hotel-info-row"><span class="info-label">Endereço</span><span class="info-value">R. Vitório Panúncio, 200 - Jardim Sevilha<br>Bragança Paulista - SP, 12914-140</span></div>
+          <div class="hotel-info-row"><span class="info-label">Site</span><span class="info-value"><a href="https://hvsa.com.br/" target="_blank" style="color:var(--navy-3);font-weight:600;">hvsa.com.br</a></span></div>
+          <div class="hotel-info-row"><span class="info-label">Acomodações</span><span class="info-value">Quartos Triplos</span></div>
+          <div class="hotel-info-row"><span class="info-label">✅ Incluso</span><span class="info-value">Hospedagem, alimentação completa e bebidas durante as refeições (almoço, coffee break e jantar), além de acesso completo a todas as áreas de lazer.</span></div>
+          <div class="hotel-info-row"><span class="info-label">❌ Não incluso</span><span class="info-value">Bebidas fora dos horários de refeição, itens do frigobar e serviços extras como spa ou outras experiências do hotel.</span></div>
           <div class="hotel-info-row"><span class="info-label">Quem fica</span><span class="info-value">Todo o time presente no Encontrão</span></div>
         </div>
       </div>
+
       <div class="hotel-card">
         <div class="hotel-card-header" style="background:linear-gradient(135deg,#1A3A5C,#0B4987);"><h3>🏙️ Hospedagem em São Paulo</h3><p>São Paulo, SP · 15 e 16/06</p></div>
         <div class="hotel-card-body">
@@ -428,6 +429,17 @@
         </div>
       </div>
     </div>
+
+    <h3 style="font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:20px;">🎡 Opções de Lazer no Hotel</h3>
+    <div class="grid-3" style="margin-bottom:24px;">
+      <div class="lazer-card"><div class="lazer-icon">🏊</div><div class="lazer-title">Piscinas Climatizadas</div><div class="lazer-desc">Piscinas com temperatura controlada para um mergulho perfeito em qualquer clima.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">🍹</div><div class="lazer-title">Lounge Bar</div><div class="lazer-desc">Drinks especiais e clima perfeito para noites memoráveis. Aberto todos os dias até as 23h.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">⚽</div><div class="lazer-title">Quadras Esportivas</div><div class="lazer-desc">Futebol, vôlei e outras atividades ao ar livre. Momento ideal pra brincar e dar risada junto.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">🍽️</div><div class="lazer-title">Restaurante HVSA</div><div class="lazer-desc">Pratos fresquinhos com ingredientes da horta própria. Alimentação completa inclusa.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">🏋️</div><div class="lazer-title">Academia</div><div class="lazer-desc">Estrutura completa para quem quer manter a rotina de exercícios durante o evento.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">🌿</div><div class="lazer-title">Áreas Verdes</div><div class="lazer-desc">Natureza e muito espaço ao ar livre para relaxar, caminhar e aproveitar o ambiente do resort.</div></div>
+    </div>
+
     <div class="alert alert-success"><span class="alert-icon">✅</span><div><strong>Reservas já feitas!</strong> Você não precisa fazer nada — apenas aparecer na data certa 😄</div></div>
   </div>
 
@@ -435,7 +447,7 @@
   <div class="tab-panel" id="tab-levar">
     <h2 class="section-title">O que Levar</h2>
     <p class="section-desc">Checklist completo para não esquecer nada. Clique nos itens para marcar conforme for preparando sua mala!</p>
-    <div class="alert alert-info"><span class="alert-icon">💡</span><div>Você ficará 5 dias fora (15 a 19/06). O Hotel Villa Santo Agostinho tem piscina — não esqueça o traje de banho!</div></div>
+    <div class="alert alert-info"><span class="alert-icon">💡</span><div>Você ficará 5 dias fora (15 a 19/06). O Hotel Villa Santo Agostinho tem piscinas climatizadas — não esqueça o traje de banho!</div></div>
     <div class="grid-2">
       <div class="card">
         <div class="card-title" style="margin-bottom:12px;">👔 Roupas e acessórios</div>
@@ -447,10 +459,11 @@
         </ul>
         <p class="checklist-group-title">Dia livre e Happy Hour (18/06)</p>
         <ul class="checklist">
-          <li><span class="check-icon" onclick="toggleCheck(this)"></span><span>Traje de banho (piscina 🏊)</span></li>
+          <li><span class="check-icon" onclick="toggleCheck(this)"></span><span>Traje de banho (piscinas 🏊)</span></li>
           <li><span class="check-icon" onclick="toggleCheck(this)"></span><span>Roupa para o Happy Hour 🍔</span></li>
           <li><span class="check-icon" onclick="toggleCheck(this)"></span><span>Chinelo / sandália</span></li>
           <li><span class="check-icon" onclick="toggleCheck(this)"></span><span>Protetor solar</span></li>
+          <li><span class="check-icon" onclick="toggleCheck(this)"></span><span>Roupas esportivas (quadras / academia)</span></li>
         </ul>
       </div>
       <div class="card">
@@ -490,26 +503,26 @@
   <div class="tab-panel" id="tab-recados">
     <h2 class="section-title">Recados</h2>
     <p class="section-desc">Comunicados importantes sobre o Encontrão. Os recados originais estão no Slack — acesse pelos links abaixo.</p>
-    <div class="alert alert-info"><span class="alert-icon">💬</span><div>Esta página agrega os principais comunicados do canal <strong>#encontrao-2026</strong> no Slack. Para ver o histórico completo, acesse o canal diretamente.</div></div>
+    <div class="alert alert-info"><span class="alert-icon">💬</span><div>Esta página agrega os principais comunicados do canal <strong>#encontrao-2026</strong> no Slack.</div></div>
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-blue">RH</div><div><div class="recado-name">Time de RH &amp; Cultura</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-blue" style="font-size:11px;">📋 Geral</span></div>
-        <div class="recado-text">Pessoal, o Encontrão 2026 acontecerá de <strong>15 a 19 de junho</strong>! Este é o nosso segundo encontro presencial do ano. Fiquem atentos às próximas comunicações. 💙</div>
+        <div class="recado-text">Pessoal, o Encontrão 2026 acontecerá de <strong>15 a 19 de junho</strong>! Este é o nosso segundo encontro presencial do ano. 💙</div>
         <a href="#" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-cyan">EV</div><div><div class="recado-name">Equipe de Eventos</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-green" style="font-size:11px;">🍔 Happy Hour</span></div>
-        <div class="recado-text">Destaque da semana: <strong>Happy Hour com Noite do Hambúrguer + Open Bar</strong> na quinta, 18/06! Preparamos algo especial. 🍻🍔</div>
+        <div class="recado-text">Destaque da semana: <strong>Happy Hour com Noite do Hambúrguer + Open Bar</strong> na quinta, 18/06! 🍻🍔</div>
         <a href="#" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-purple">OPS</div><div><div class="recado-name">Operações</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-yellow" style="font-size:11px;">✈️ Passagens</span></div>
-        <div class="recado-text">Lembrete: passagens devem ser compradas <strong>exclusivamente pela plataforma Onfly</strong> até <strong>31/05/2026</strong>. Ao reservar, avise seu gestor para aprovar dentro do prazo!</div>
+        <div class="recado-text">Lembrete: passagens devem ser compradas <strong>exclusivamente pela Onfly</strong> até <strong>31/05/2026</strong>. Ao reservar, avise sua liderança para aprovar dentro do prazo!</div>
         <a href="#" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-blue">RH</div><div><div class="recado-name">Time de RH &amp; Cultura</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-cyan" style="font-size:11px;">🏨 Hospedagem</span></div>
-        <div class="recado-text">Hospedagens confirmadas! De 17 a 19/06 todo o time estará no <strong>Hotel Villa Santo Agostinho</strong>, Bragança Paulista. A lista de alocações será enviada em breve.</div>
+        <div class="recado-text">De 17 a 19/06 todo o time estará no <strong>Hotel Villa Santo Agostinho</strong>, Bragança Paulista. A lista de alocações será enviada em breve.</div>
         <a href="#" class="recado-link">🔗 Ver no Slack</a>
       </div>
     </div>
@@ -524,10 +537,10 @@
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">✈️ E se meu voo atrasar no dia 15/06?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sem problema! O dia 15 é exclusivamente de chegada e acomodação. Não há atividades programadas. Apenas avise a organização pelo Slack.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏨 Posso levar acompanhante para o hotel?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">As reservas foram feitas para colaboradores apenas. Caso queira levar acompanhante, entre em contato com o RH com antecedência.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚗 Tem estacionamento no Hotel Villa Santo Agostinho?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sim! O hotel possui estacionamento próprio. Confirme com antecedência se é gratuito ou tarifado.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">💳 O que está incluso na hospedagem?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">A hospedagem inclui diárias e café da manhã. O Happy Hour do dia 18 também está incluso (open bar + hambúrguer). Para consumos extras, recomendamos ter cartão disponível.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">💳 O que está incluso na hospedagem?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Está incluso: hospedagem, alimentação completa e bebidas durante as refeições (almoço, coffee break e jantar), acesso a todas as áreas de lazer e o Happy Hour do dia 18. <strong>Não está incluso:</strong> bebidas fora dos horários de refeição, itens do frigobar e serviços extras como spa.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🌐 Tem Wi-Fi no hotel?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sim! A senha será fornecida no check-in. Para trabalho com maior qualidade de conexão, recomendamos ter um plano de dados de backup.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🍔 O que é a Noite do Hambúrguer?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">É o nosso Happy Hour especial! Hambúrgueres artesanais + open bar para celebrar o time. Acontece na noite de quinta, 18/06. Horário e local no hotel serão comunicados no Slack.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">⏰ Qual o horário de saída para Bragança no dia 17/06?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">O horário ainda está sendo definido. Assim que confirmado, será comunicado no Slack e esta página será atualizada.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚌 Como vai funcionar o transporte para Bragança?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">A saída será às <strong>8h do dia 17/06</strong> em ônibus fretado exclusivo da Inspira. O ponto de encontro será confirmado pelo Slack em breve. O trajeto leva aproximadamente 2 horas.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏷️ Como preencho a TAG na Onfly?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Na hora de finalizar sua reserva na Onfly, você verá um campo de TAG ao lado do centro de custo. Selecione <strong>Encontrão 06/2026</strong> — ela já está cadastrada na plataforma.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">📲 Tenho dúvidas não respondidas. Com quem falo?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Fale no canal <strong>#encontrao-2026</strong> no Slack! O time de RH e Cultura está disponível para ajudar.</div></div>
     </div>
@@ -548,7 +561,6 @@
 </footer>
 
 <script>
-  // TABS
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const t = btn.dataset.tab;
@@ -559,7 +571,6 @@
     });
   });
 
-  // COUNTDOWN — 15/06/2026
   function updateCountdown() {
     const target = new Date('2026-06-15T08:00:00');
     const now = new Date();
@@ -568,19 +579,14 @@
       ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => document.getElementById(id).textContent = '🎉');
       return;
     }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+    document.getElementById('cd-days').textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
   }
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  // FAQ
   function toggleFaq(el) {
     const item = el.closest('.faq-item');
     const isOpen = item.classList.contains('open');
@@ -588,7 +594,6 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  // CHECKLIST
   function toggleCheck(el) {
     const li = el.closest('li');
     if (li.classList.contains('checked')) { li.classList.remove('checked'); el.textContent = ''; }
