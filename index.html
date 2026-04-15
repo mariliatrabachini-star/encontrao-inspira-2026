@@ -56,7 +56,9 @@
 
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+    @media (max-width: 1000px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 900px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 500px) { .grid-4 { grid-template-columns: 1fr; } }
 
@@ -433,7 +435,7 @@
     <div style="margin-bottom:32px;">
       <div class="uber-rule ok">
         <span class="uber-rule-icon">✅</span>
-        <div class="uber-rule-body"><strong>Para quem é o Uber Corporativo no Encontrão:</strong> O uso é destinado, preferencialmente, aos colaboradores de fora do estado e aos deslocamentos relacionados ao Encontrão — como hotel, aeroporto, rodoviária, Escritório Omni e Distrito. Corridas fora desses trajetos são de responsabilidade do colaborador.</div>
+        <div class="uber-rule-body"><strong>Para quem é o Uber Corporativo no Encontrão:</strong> O uso é destinado, preferencialmente, aos colaboradores de fora do estado e aos deslocamentos relacionados ao Encontrão — como hotel, aeroporto, rodoviária e escritório. Corridas fora desses trajetos são de responsabilidade do colaborador.</div>
       </div>
       <div class="uber-rule warn">
         <span class="uber-rule-icon">⚠️</span>
@@ -441,7 +443,7 @@
       </div>
       <div class="uber-rule info">
         <span class="uber-rule-icon">🤝</span>
-        <div class="uber-rule-body"><strong>Compartilhe corridas sempre que possível:</strong> Quando for uma opção inteligente e sem comprometer horário ou confidencialidade, incentivamos que você combine com outros colaboradores que vão para a mesma região. É uma ótima forma de otimizar custos!</div>
+        <div class="uber-rule-body"><strong>Compartilhe corridas sempre que possível:</strong> Quando for uma opção inteligente e sem comprometer horário, incentivamos que você combine com outros colaboradores que vão para a mesma região. É uma ótima forma de otimizar custos!</div>
       </div>
       <div class="uber-rule warn">
         <span class="uber-rule-icon">🚕</span>
@@ -508,7 +510,7 @@
   <div class="tab-panel" id="tab-hospedagem">
     <h2 class="section-title">Hospedagem</h2>
     <p class="section-desc">Hotéis em São Paulo (15 e 16/06) e Hotel Villa Santo Agostinho em Bragança Paulista (17 a 19/06).</p>
-    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>A lista de quem fica hospedado em cada hotel será divulgada pela organização. Dúvidas? Fale com RH ou a equipe de eventos.</div></div>
+    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>A divisão dos quartos é feita pelo time de People de forma aleatória — não é possível escolher com quem você ficará. A ideia é justamente essa: que o time se conheça e troque experiências nesses dias de integração! 💙 A lista com as alocações será divulgada em breve.</div></div>
 
     <div class="destination-hero">
       <h2>🌿 Hotel Villa Santo Agostinho</h2>
@@ -662,7 +664,7 @@
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🌐 Tem Wi-Fi no hotel?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sim! A senha será fornecida no check-in. Para trabalho com maior qualidade de conexão, recomendamos ter um plano de dados de backup.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🍔 O que é a Noite do Hambúrguer?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">É o nosso Happy Hour especial! Hambúrgueres artesanais + open bar para celebrar o time. Acontece na noite de quinta, 18/06. Horário e local serão comunicados no Slack.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚌 Como vai funcionar o transporte para Bragança?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Saída às <strong>8h do dia 17/06</strong> em ônibus fretado exclusivo da Inspira. O ponto de encontro será confirmado pelo Slack em breve. Trajeto: ~2 horas.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚗 Posso usar o Uber Corporativo para qualquer corrida em SP?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Não. Durante o Encontrão, o Uber Corporativo é destinado, preferencialmente, a colaboradores de fora do estado e para deslocamentos relacionados ao evento — hotel, aeroporto, rodoviária, Escritório Omni e Distrito. Corridas pessoais são por conta do colaborador. Consulte a aba <strong>Uber Corporativo</strong> para mais detalhes.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚗 Posso usar o Uber Corporativo para qualquer corrida em SP?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Não. Durante o Encontrão, o Uber Corporativo é destinado, preferencialmente, a colaboradores de fora do estado e para deslocamentos relacionados ao evento — hotel, aeroporto, rodoviária e escritório. Corridas pessoais são por conta do colaborador. Consulte a aba <strong>Uber Corporativo</strong> para mais detalhes.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏷️ Como preencho a TAG na Onfly?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Na hora de finalizar a reserva na Onfly, você verá um campo de TAG ao lado do centro de custo. Selecione <strong>Encontrão 06/2026</strong> — ela já está cadastrada.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">📲 Tenho dúvidas não respondidas. Com quem falo?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Fale no canal <strong>#encontrao-2026</strong> no Slack! O time de RH e Cultura está disponível para ajudar.</div></div>
     </div>
