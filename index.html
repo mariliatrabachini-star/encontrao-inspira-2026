@@ -37,9 +37,9 @@
     .countdown-label { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.8px; }
 
     .tabs-wrapper { background: #fff; border-bottom: 1px solid var(--border-faint); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(1,27,54,0.06); }
-    .tabs-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; overflow-x: auto; scrollbar-width: none; }
+    .tabs-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; overflow-x: auto; scrollbar-width: none; }
     .tabs-inner::-webkit-scrollbar { display: none; }
-    .tab-btn { display: flex; align-items: center; gap: 8px; padding: 16px 20px; font-family: var(--font-primary); font-size: 13px; font-weight: 500; color: var(--text-secondary); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; position: relative; top: 1px; }
+    .tab-btn { display: flex; align-items: center; gap: 8px; padding: 16px 18px; font-family: var(--font-primary); font-size: 13px; font-weight: 500; color: var(--text-secondary); background: none; border: none; border-bottom: 2px solid transparent; cursor: pointer; white-space: nowrap; transition: all 0.2s ease; position: relative; top: 1px; }
     .tab-btn:hover { color: var(--btn-accent); background: var(--sky-1); }
     .tab-btn.active { color: var(--navy-3); border-bottom-color: var(--brand-blue); font-weight: 600; }
 
@@ -65,6 +65,18 @@
     .alert-info { background: var(--surface-info); border: 1px solid var(--sky-6); color: var(--navy-3); }
     .alert-warning { background: var(--warning-1); border: 1px solid #FFE9BD; color: #7A4A00; }
     .alert-success { background: var(--success-1); border: 1px solid #B7EDE2; color: var(--success-8); }
+    .alert-critical { background: #FFEBED; border: 1px solid #FFC7CD; color: #CF1329; }
+
+    /* UPDATES BLOCK */
+    .updates-block { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); overflow: hidden; margin-bottom: 32px; }
+    .updates-header { background: linear-gradient(135deg, var(--navy-7), var(--navy-5)); color: var(--text-invert); padding: 16px 24px; display: flex; align-items: center; gap: 10px; }
+    .updates-header h3 { font-size: 15px; font-weight: 600; }
+    .updates-header span { font-size: 18px; }
+    .update-item { display: flex; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--border-faint); align-items: flex-start; }
+    .update-item:last-child { border-bottom: none; }
+    .update-date { font-size: 11px; font-weight: 600; color: var(--brand-blue); white-space: nowrap; padding-top: 2px; min-width: 55px; font-family: var(--font-secondary); }
+    .update-text { font-size: 14px; color: var(--text-secondary); line-height: 1.55; font-family: var(--font-secondary); }
+    .update-tag { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: var(--br-full); margin-right: 6px; }
 
     .timeline { position: relative; }
     .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--brand-blue), var(--brand-cyan)); border-radius: 2px; }
@@ -81,6 +93,7 @@
     .tag-purple { background: #E1DAFF; color: #3A2E73; }
     .tag-yellow { background: var(--warning-1); color: #7A4A00; }
     .tag-green { background: var(--success-1); color: var(--success-8); }
+    .tag-red { background: #FFEBED; color: #CF1329; }
 
     .hotel-card { background: var(--card-default); border: 1px solid var(--border-faint); border-radius: var(--br-xl); overflow: hidden; transition: box-shadow 0.2s; }
     .hotel-card:hover { box-shadow: 0 8px 24px rgba(1,27,54,0.1); }
@@ -102,6 +115,15 @@
     .step-desc ul { margin-top: 8px; padding-left: 18px; }
     .step-desc ul li { margin-bottom: 4px; }
     .step-desc a { color: var(--navy-3); font-weight: 600; }
+
+    .uber-rule { display: flex; gap: 14px; align-items: flex-start; padding: 16px 20px; border-radius: var(--br-lg); margin-bottom: 12px; font-family: var(--font-secondary); font-size: 14px; line-height: 1.6; }
+    .uber-rule-icon { font-size: 22px; flex-shrink: 0; }
+    .uber-rule-body { flex: 1; color: var(--text-secondary); }
+    .uber-rule-body strong { color: var(--text-primary); }
+    .uber-rule.ok { background: var(--success-1); border: 1px solid #B7EDE2; }
+    .uber-rule.warn { background: var(--warning-1); border: 1px solid #FFE9BD; }
+    .uber-rule.info { background: var(--surface-info); border: 1px solid var(--sky-6); }
+    .uber-rule.no { background: #FFEBED; border: 1px solid #FFC7CD; }
 
     .checklist { list-style: none; display: flex; flex-direction: column; gap: 8px; }
     .checklist li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--text-secondary); font-family: var(--font-secondary); padding: 8px 12px; border-radius: var(--br-sm); transition: background 0.15s; }
@@ -178,7 +200,7 @@
       .hero { padding: 32px 16px 0; }
       .main { padding: 20px 16px; }
       .tabs-inner { padding: 0 16px; }
-      .tab-btn { padding: 12px 16px; font-size: 12px; }
+      .tab-btn { padding: 12px 14px; font-size: 12px; }
       .timeline::before { left: 16px; }
       .timeline-dot { width: 32px; height: 32px; }
       .welcome-box { padding: 20px; }
@@ -203,6 +225,7 @@
     <button class="tab-btn active" data-tab="inicio">🏠 Início</button>
     <button class="tab-btn" data-tab="agenda">📅 Agenda</button>
     <button class="tab-btn" data-tab="chegada">✈️ Como Chegar</button>
+    <button class="tab-btn" data-tab="uber">🚗 Uber Corporativo</button>
     <button class="tab-btn" data-tab="hospedagem">🏨 Hospedagem</button>
     <button class="tab-btn" data-tab="levar">📦 O que Levar</button>
     <button class="tab-btn" data-tab="recados">📢 Recados</button>
@@ -221,6 +244,30 @@
       Esse é o nosso encontro semestral para revisarmos tudo o que vivemos nos últimos meses, fortalecer a integração do time e nos prepararmos para os próximos desafios e oportunidades. <strong>Preparados?</strong> 💙</p>
     </div>
 
+    <!-- ÚLTIMAS ATUALIZAÇÕES -->
+    <div class="updates-block">
+      <div class="updates-header">
+        <span>🔔</span>
+        <h3>Últimas atualizações importantes</h3>
+      </div>
+      <div class="update-item">
+        <span class="update-date">Abr 2026</span>
+        <div class="update-text"><span class="update-tag tag-yellow">✈️ Passagens</span> Compra de passagens aberta! Reserve até <strong>31/05/2026</strong> pela Onfly. Use a TAG <strong>Encontrão 06/2026</strong> e avise sua liderança para aprovar no prazo.</div>
+      </div>
+      <div class="update-item">
+        <span class="update-date">Abr 2026</span>
+        <div class="update-text"><span class="update-tag tag-cyan">🏨 Hotel</span> Hospedagem confirmada no <strong>Hotel Villa Santo Agostinho</strong>, Bragança Paulista. Check-in 17/06 (~10h) · Check-out 19/06 (10h). Quartos triplos, alimentação e lazer inclusos.</div>
+      </div>
+      <div class="update-item">
+        <span class="update-date">Abr 2026</span>
+        <div class="update-text"><span class="update-tag tag-blue">🚌 Transporte</span> Saída em ônibus fretado exclusivo da Inspira às <strong>8h do dia 17/06</strong>. Ponto de encontro a confirmar em breve pelo Slack.</div>
+      </div>
+      <div class="update-item">
+        <span class="update-date">Abr 2026</span>
+        <div class="update-text"><span class="update-tag tag-green">🍔 Happy Hour</span> Noite do hambúrguer + open bar confirmada para <strong>18/06 (quinta)</strong> à noite. Detalhes de horário em breve!</div>
+      </div>
+    </div>
+
     <div class="overview-stats">
       <div class="stat-card"><div class="stat-value">5</div><div class="stat-label">Dias de evento</div></div>
       <div class="stat-card"><div class="stat-value">2</div><div class="stat-label">Cidades</div></div>
@@ -228,7 +275,6 @@
       <div class="stat-card"><div class="stat-value">∞</div><div class="stat-label">Energia Inspira</div></div>
     </div>
 
-    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>Esta página centraliza todas as informações do evento. Use as abas acima para navegar. Em caso de dúvidas, consulte a aba FAQ ou fale com a organização.</div></div>
     <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div><strong>Atenção:</strong> Compra de passagens deve ser feita pela plataforma <strong>Onfly</strong> até <strong>31/05/2026</strong>. Consulte a aba "Como Chegar" para o passo a passo.</div></div>
 
     <h3 style="font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:20px;">Resumo da programação</h3>
@@ -236,7 +282,7 @@
       <div class="card"><div style="font-size:24px;margin-bottom:12px;">📍</div><div class="card-title">São Paulo — 15 e 16/06</div><div class="card-body">Chegada e acomodação para quem vem de fora. Dia 16 de integração e planejamento semestral.</div></div>
       <div class="card"><div style="font-size:24px;margin-bottom:12px;">🌿</div><div class="card-title">Bragança Paulista — 17 a 19/06</div><div class="card-body">Hotel Villa Santo Agostinho. Auditório, dia livre e Happy Hour com hambúrguer + open bar na quinta!</div></div>
       <div class="card"><div style="font-size:24px;margin-bottom:12px;">🍔</div><div class="card-title">Happy Hour — 18/06 (quinta)</div><div class="card-body">Noite do hambúrguer + open bar. O destaque da semana! Mais detalhes em breve.</div></div>
-      <div class="card"><div style="font-size:24px;margin-bottom:12px;">🏠</div><div class="card-title">Retorno — 19/06 (sexta)</div><div class="card-body">Café da manhã e check-out às 11h. Retorno para São Paulo (~2h de viagem).</div></div>
+      <div class="card"><div style="font-size:24px;margin-bottom:12px;">🏠</div><div class="card-title">Retorno — 19/06 (sexta)</div><div class="card-body">Café da manhã e check-out às 10h. Retorno para São Paulo (~2h de viagem).</div></div>
     </div>
   </div>
 
@@ -269,7 +315,7 @@
         <div class="timeline-content">
           <div class="timeline-date">17 de Junho — Quarta-feira</div>
           <div class="timeline-title">Saída para o Hotel Villa Santo Agostinho</div>
-          <div class="timeline-body">Nos encontraremos às <strong>8h</strong> (local do ponto de encontro a confirmar) para saída em conjunto. O trajeto será realizado em <strong>ônibus fretado exclusivo da Inspira</strong> para todo o time. Tempo aproximado de deslocamento: 2 horas.</div>
+          <div class="timeline-body">Nos encontraremos às <strong>8h</strong> (local a confirmar) para saída em ônibus fretado exclusivo da Inspira. Tempo de deslocamento: ~2 horas.</div>
           <span class="timeline-tag tag-cyan">🌿 Bragança Paulista</span><span class="timeline-tag tag-yellow">📍 Ponto de encontro a confirmar</span>
         </div>
       </div>
@@ -287,8 +333,8 @@
         <div class="timeline-content">
           <div class="timeline-date">19 de Junho — Sexta-feira</div>
           <div class="timeline-title">Café da manhã e retorno</div>
-          <div class="timeline-body">Café da manhã e check-out às <strong>11h</strong>. Retorno para São Paulo no ônibus fretado (~2h). Até o próximo Encontrão! 💙</div>
-          <span class="timeline-tag tag-blue">🏙️ Retorno SP</span><span class="timeline-tag tag-cyan">Check-out 11h</span>
+          <div class="timeline-body">Café da manhã e check-out às <strong>10h</strong>. Retorno para São Paulo no ônibus fretado (~2h). Até o próximo Encontrão! 💙</div>
+          <span class="timeline-tag tag-blue">🏙️ Retorno SP</span><span class="timeline-tag tag-cyan">Check-out 10h</span>
         </div>
       </div>
     </div>
@@ -298,43 +344,39 @@
   <div class="tab-panel" id="tab-chegada">
     <h2 class="section-title">Como Chegar</h2>
     <p class="section-desc">Informações sobre compra de passagens pela Onfly, fluxo de aprovação, política de viagens e logística de deslocamento.</p>
-    <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div><strong>Prazo importante:</strong> Cada colaborador deve reservar sua passagem até <strong>31/05/2026</strong>. Passagens fora da plataforma Onfly não serão reembolsadas.</div></div>
+    <div class="alert alert-warning"><span class="alert-icon">⚠️</span><div><strong>Prazo importante:</strong> Reserve sua passagem até <strong>31/05/2026</strong>. Passagens fora da plataforma Onfly não serão reembolsadas.</div></div>
 
     <div class="card" style="margin-bottom:32px;">
       <div class="steps">
-
         <div class="step-item">
           <div class="step-num">1</div>
           <div class="step-content">
             <div class="step-title">Reservas para o Encontrão 06/2026</div>
-            <div class="step-desc">O período de compra começa agora. Cada colaborador deve escolher sua passagem até o dia <strong>31/05/2026</strong>. Após selecionar seu voo, a reserva será enviada automaticamente à sua liderança para aprovação. O time de People seguirá apoiando com as informações de logística de chegada e saída do evento.</div>
+            <div class="step-desc">O período de compra começa agora. Cada colaborador deve escolher sua passagem até o dia <strong>31/05/2026</strong>. Após selecionar seu voo, a reserva será enviada automaticamente à sua liderança para aprovação. O time de People seguirá apoiando com as informações de logística de chegada e saída.</div>
           </div>
         </div>
-
         <div class="step-item">
           <div class="step-num">2</div>
           <div class="step-content">
             <div class="step-title">Fluxo de Aprovação</div>
             <div class="step-desc">Toda reserva só será emitida após passar pelo aprovador (sua liderança direta). Quando uma reserva for criada, a sua liderança receberá um e-mail automático da Onfly para aprovar.<br><br>
-            ⚠️ <strong>Atenção:</strong> a reserva possui um tempo limite para ser aprovada. Caso esse tempo expire, ela é cancelada e será necessário fazer uma nova reserva. Por isso, ao reservar, <strong>avise sua liderança</strong> para que acompanhe a notificação e evite retrabalho.<br><br>
-            Os líderes devem garantir que todas as passagens de seus times estejam aprovadas e emitidas até <strong>31/05/2026</strong>.</div>
+            ⚠️ <strong>Atenção:</strong> a reserva possui um tempo limite para ser aprovada. Caso expire, ela é cancelada e será necessário fazer uma nova. Por isso, ao reservar, <strong>avise sua liderança</strong> para que acompanhe e evite retrabalho.<br><br>
+            Os líderes devem garantir que todas as passagens estejam aprovadas e emitidas até <strong>31/05/2026</strong>.</div>
           </div>
         </div>
-
         <div class="step-item">
           <div class="step-num">3</div>
           <div class="step-content">
             <div class="step-title">Política de Viagens — Pontos Importantes</div>
             <div class="step-desc"><ul>
-              <li>Caso a passagem esteja fora da política corporativa, o gestor avaliará caso a caso.</li>
+              <li>Passagem fora da política corporativa: o gestor avaliará caso a caso.</li>
               <li><strong>Não faremos upgrades de tarifa ou compra de assentos.</strong></li>
               <li>Sempre priorizaremos o <strong>menor preço disponível</strong>.</li>
-              <li>Voos com escala são aceitos, desde que em tempo razoável de viagem.</li>
+              <li>Voos com escala são aceitos, desde que em tempo razoável.</li>
               <li>Necessidades excepcionais serão tratadas individualmente.</li>
             </ul></div>
           </div>
         </div>
-
         <div class="step-item">
           <div class="step-num">4</div>
           <div class="step-content">
@@ -347,7 +389,6 @@
             </div>
           </div>
         </div>
-
         <div class="step-item">
           <div class="step-num">5</div>
           <div class="step-content">
@@ -357,7 +398,6 @@
             </div>
           </div>
         </div>
-
         <div class="step-item">
           <div class="step-num">6</div>
           <div class="step-content">
@@ -369,7 +409,6 @@
             </ul></div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -378,8 +417,91 @@
     <div class="card">
       <div style="font-size:20px;margin-bottom:12px;">🚌</div>
       <div class="card-title">Ônibus fretado exclusivo Inspira</div>
-      <div class="card-body">Nos encontraremos às <strong>8h</strong> (local do ponto de encontro a confirmar) para saída em conjunto com destino a Bragança Paulista, no Hotel Villa Santo Agostinho.<br><br>O tempo aproximado de deslocamento é de <strong>2 horas</strong>, e o trajeto será realizado em um ônibus fretado exclusivo da Inspira para todo o time. O ponto de encontro exato será confirmado pelo Slack em breve.</div>
+      <div class="card-body">Nos encontraremos às <strong>8h</strong> (local do ponto de encontro a confirmar) para saída em conjunto com destino ao Hotel Villa Santo Agostinho, Bragança Paulista.<br><br>O trajeto será realizado em ônibus fretado exclusivo da Inspira para todo o time (~2 horas). O ponto de encontro exato será confirmado pelo Slack em breve.</div>
     </div>
+  </div>
+
+  <!-- UBER CORPORATIVO -->
+  <div class="tab-panel" id="tab-uber">
+    <h2 class="section-title">Uber Corporativo 🚗</h2>
+    <p class="section-desc">Combinados importantes sobre o uso do Uber Corporativo Inspira durante o Encontrão. Contamos com o bom senso e a colaboração de todos!</p>
+
+    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>Dúvidas sobre o uso corporativo? Entre em contato com o time de Finance pelo canal <strong>#support-finance</strong> no Slack.</div></div>
+
+    <h3 style="font-size:17px;font-weight:600;color:var(--text-primary);margin-bottom:16px;">📋 Combinados para o Encontrão</h3>
+
+    <div style="margin-bottom:32px;">
+      <div class="uber-rule ok">
+        <span class="uber-rule-icon">✅</span>
+        <div class="uber-rule-body"><strong>Para quem é o Uber Corporativo no Encontrão:</strong> O uso é destinado, preferencialmente, aos colaboradores de fora do estado e aos deslocamentos relacionados ao Encontrão — como hotel, aeroporto, rodoviária, Escritório Omni e Distrito. Corridas fora desses trajetos são de responsabilidade do colaborador.</div>
+      </div>
+      <div class="uber-rule warn">
+        <span class="uber-rule-icon">⚠️</span>
+        <div class="uber-rule-body"><strong>Confira o perfil antes de solicitar:</strong> Antes de iniciar a corrida, confiram se a forma de pagamento está selecionada como <strong>"Conta corporativa Inspira"</strong>. Para corridas pessoais em São Paulo, lembrem-se de trocar para a forma de pagamento pessoal.</div>
+      </div>
+      <div class="uber-rule info">
+        <span class="uber-rule-icon">🤝</span>
+        <div class="uber-rule-body"><strong>Compartilhe corridas sempre que possível:</strong> Quando for uma opção inteligente e sem comprometer horário ou confidencialidade, incentivamos que você combine com outros colaboradores que vão para a mesma região. É uma ótima forma de otimizar custos!</div>
+      </div>
+      <div class="uber-rule warn">
+        <span class="uber-rule-icon">🚕</span>
+        <div class="uber-rule-body"><strong>UberX é a categoria padrão:</strong> Pedimos que todas as corridas sejam solicitadas na categoria <strong>UberX</strong>. Caso outra categoria seja utilizada, o valor adicional poderá ser descontado posteriormente. Exceção após as 21h, por segurança, se o UberX não estiver disponível.</div>
+      </div>
+      <div class="uber-rule no">
+        <span class="uber-rule-icon">❌</span>
+        <div class="uber-rule-body"><strong>Não use para fins pessoais ou entregas:</strong> O perfil corporativo é exclusivo para mobilidade do time Inspira. Não é permitido usar para serviços de entrega (Uber Eats), compras ou frete, nem para viagens pessoais.</div>
+      </div>
+      <div class="uber-rule info">
+        <span class="uber-rule-icon">💡</span>
+        <div class="uber-rule-body"><strong>Bom senso e responsabilidade:</strong> Contamos com a colaboração de todos para utilizarmos o serviço de forma <strong>consciente, econômica e eficiente</strong>. Taxas de cancelamento ou espera por atraso do colaborador não são cobertas pela Inspira.</div>
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <h3 style="font-size:17px;font-weight:600;color:var(--text-primary);margin-bottom:16px;">📖 Política Geral do Uber Corporativo Inspira</h3>
+
+    <div class="grid-2" style="margin-bottom:24px;">
+      <div class="card">
+        <div style="font-size:20px;margin-bottom:10px;">✅</div>
+        <div class="card-title">Trajetos permitidos</div>
+        <div class="card-body">
+          Corridas diretamente ligadas às atividades na Inspira:
+          <ul style="margin-top:10px;padding-left:18px;line-height:1.8;">
+            <li>Coworking ou escritório (em viagem a trabalho)</li>
+            <li>Reuniões externas</li>
+            <li>Visitas a clientes</li>
+            <li>Eventos a serviço</li>
+          </ul>
+          <p style="margin-top:10px;font-size:13px;color:var(--text-tertiary);">O trajeto diário casa-coworking <strong>não está incluso</strong>, salvo aprovação especial da liderança.</p>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:20px;margin-bottom:10px;">🔒</div>
+        <div class="card-title">Transparência e dados</div>
+        <div class="card-body">As viagens pelo perfil corporativo registram origem, destino, horários e valores. Esses dados são acessados pela administração da conta Inspira para auditoria e controle de custos.<br><br>Relatórios mensais são compartilhados com as lideranças para acompanhamento.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:20px;margin-bottom:10px;">🆘</div>
+        <div class="card-title">Quando a conta corporativa falhar</div>
+        <div class="card-body">Caso o app falhe ou não processe a cobrança via perfil corporativo:<br><br>
+          1. Realize o pagamento com seu perfil pessoal.<br>
+          2. Solicite reembolso ao time de Finanças (<strong>#support-finance</strong>), anexando o comprovante e o contexto da viagem.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:20px;margin-bottom:10px;">🛡️</div>
+        <div class="card-title">Segurança e incidentes</div>
+        <div class="card-body">
+          <ul style="padding-left:18px;line-height:1.8;">
+            <li>Após as 21h, priorize segurança — UberX ou Comfort se necessário</li>
+            <li>Incidentes: reporte no app e avise sua liderança assim que for seguro</li>
+            <li>Itens perdidos: use a função "Ajuda" no próprio aplicativo</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-critical"><span class="alert-icon">🚫</span><div><strong>Uso indevido:</strong> O uso do perfil corporativo de forma indevida (viagens pessoais, taxas evitáveis recorrentes ou desrespeito às regras) pode levar a bloqueio temporário do perfil, ressarcimento dos valores e outras medidas internas.</div></div>
   </div>
 
   <!-- HOSPEDAGEM -->
@@ -397,7 +519,6 @@
         <span class="amenity">🏋️ Academia</span>
         <span class="amenity">🎤 Auditório</span>
         <span class="amenity">⚽ Quadras esportivas</span>
-        <span class="amenity">🍹 Lounge Bar</span>
         <span class="amenity">📶 Wi-Fi</span>
         <span class="amenity">🚗 Estacionamento</span>
       </div>
@@ -408,7 +529,7 @@
         <div class="hotel-card-header"><h3>🌿 Hotel Villa Santo Agostinho</h3><p>Bragança Paulista, SP · 17 a 19/06</p></div>
         <div class="hotel-card-body">
           <div class="hotel-info-row"><span class="info-label">Check-in</span><span class="info-value">17/06 — aproximadamente às 10h</span></div>
-          <div class="hotel-info-row"><span class="info-label">Check-out</span><span class="info-value">19/06 — às 11h</span></div>
+          <div class="hotel-info-row"><span class="info-label">Check-out</span><span class="info-value">19/06 — às 10h</span></div>
           <div class="hotel-info-row"><span class="info-label">Endereço</span><span class="info-value">R. Vitório Panúncio, 200 - Jardim Sevilha<br>Bragança Paulista - SP, 12914-140</span></div>
           <div class="hotel-info-row"><span class="info-label">Site</span><span class="info-value"><a href="https://hvsa.com.br/" target="_blank" style="color:var(--navy-3);font-weight:600;">hvsa.com.br</a></span></div>
           <div class="hotel-info-row"><span class="info-label">Acomodações</span><span class="info-value">Quartos Triplos</span></div>
@@ -417,7 +538,6 @@
           <div class="hotel-info-row"><span class="info-label">Quem fica</span><span class="info-value">Todo o time presente no Encontrão</span></div>
         </div>
       </div>
-
       <div class="hotel-card">
         <div class="hotel-card-header" style="background:linear-gradient(135deg,#1A3A5C,#0B4987);"><h3>🏙️ Hospedagem em São Paulo</h3><p>São Paulo, SP · 15 e 16/06</p></div>
         <div class="hotel-card-body">
@@ -433,11 +553,11 @@
     <h3 style="font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:20px;">🎡 Opções de Lazer no Hotel</h3>
     <div class="grid-3" style="margin-bottom:24px;">
       <div class="lazer-card"><div class="lazer-icon">🏊</div><div class="lazer-title">Piscinas Climatizadas</div><div class="lazer-desc">Piscinas com temperatura controlada para um mergulho perfeito em qualquer clima.</div></div>
-      <div class="lazer-card"><div class="lazer-icon">🍹</div><div class="lazer-title">Lounge Bar</div><div class="lazer-desc">Drinks especiais e clima perfeito para noites memoráveis. Aberto todos os dias até as 23h.</div></div>
-      <div class="lazer-card"><div class="lazer-icon">⚽</div><div class="lazer-title">Quadras Esportivas</div><div class="lazer-desc">Futebol, vôlei e outras atividades ao ar livre. Momento ideal pra brincar e dar risada junto.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">⚽</div><div class="lazer-title">Quadras Esportivas</div><div class="lazer-desc">Futebol, vôlei e outras atividades ao ar livre. Ideal pra brincar e dar risada junto.</div></div>
       <div class="lazer-card"><div class="lazer-icon">🍽️</div><div class="lazer-title">Restaurante HVSA</div><div class="lazer-desc">Pratos fresquinhos com ingredientes da horta própria. Alimentação completa inclusa.</div></div>
       <div class="lazer-card"><div class="lazer-icon">🏋️</div><div class="lazer-title">Academia</div><div class="lazer-desc">Estrutura completa para quem quer manter a rotina de exercícios durante o evento.</div></div>
-      <div class="lazer-card"><div class="lazer-icon">🌿</div><div class="lazer-title">Áreas Verdes</div><div class="lazer-desc">Natureza e muito espaço ao ar livre para relaxar, caminhar e aproveitar o ambiente do resort.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">🌿</div><div class="lazer-title">Áreas Verdes</div><div class="lazer-desc">Natureza e muito espaço ao ar livre para relaxar, caminhar e aproveitar o resort.</div></div>
+      <div class="lazer-card"><div class="lazer-icon">🎤</div><div class="lazer-title">Auditório</div><div class="lazer-desc">Espaço reservado para as atividades de planejamento e integração do time Inspira.</div></div>
     </div>
 
     <div class="alert alert-success"><span class="alert-icon">✅</span><div><strong>Reservas já feitas!</strong> Você não precisa fazer nada — apenas aparecer na data certa 😄</div></div>
@@ -517,12 +637,12 @@
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-purple">OPS</div><div><div class="recado-name">Operações</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-yellow" style="font-size:11px;">✈️ Passagens</span></div>
-        <div class="recado-text">Lembrete: passagens devem ser compradas <strong>exclusivamente pela Onfly</strong> até <strong>31/05/2026</strong>. Ao reservar, avise sua liderança para aprovar dentro do prazo!</div>
+        <div class="recado-text">Passagens pela <strong>Onfly</strong> até <strong>31/05/2026</strong>. Use a TAG <strong>Encontrão 06/2026</strong> e avise sua liderança para aprovar no prazo!</div>
         <a href="#" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-blue">RH</div><div><div class="recado-name">Time de RH &amp; Cultura</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-cyan" style="font-size:11px;">🏨 Hospedagem</span></div>
-        <div class="recado-text">De 17 a 19/06 todo o time estará no <strong>Hotel Villa Santo Agostinho</strong>, Bragança Paulista. A lista de alocações será enviada em breve.</div>
+        <div class="recado-text">De 17 a 19/06 todo o time estará no <strong>Hotel Villa Santo Agostinho</strong>, Bragança Paulista. Check-out às <strong>10h</strong> do dia 19/06.</div>
         <a href="#" class="recado-link">🔗 Ver no Slack</a>
       </div>
     </div>
@@ -537,11 +657,13 @@
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">✈️ E se meu voo atrasar no dia 15/06?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sem problema! O dia 15 é exclusivamente de chegada e acomodação. Não há atividades programadas. Apenas avise a organização pelo Slack.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏨 Posso levar acompanhante para o hotel?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">As reservas foram feitas para colaboradores apenas. Caso queira levar acompanhante, entre em contato com o RH com antecedência.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚗 Tem estacionamento no Hotel Villa Santo Agostinho?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sim! O hotel possui estacionamento próprio. Confirme com antecedência se é gratuito ou tarifado.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">💳 O que está incluso na hospedagem?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Está incluso: hospedagem, alimentação completa e bebidas durante as refeições (almoço, coffee break e jantar), acesso a todas as áreas de lazer e o Happy Hour do dia 18. <strong>Não está incluso:</strong> bebidas fora dos horários de refeição, itens do frigobar e serviços extras como spa.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">💳 O que está incluso na hospedagem?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Está incluso: hospedagem, alimentação completa e bebidas durante as refeições (almoço, coffee break e jantar), acesso a todas as áreas de lazer e o Happy Hour do dia 18. <strong>Não está incluso:</strong> bebidas fora das refeições, itens do frigobar e serviços extras como spa.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">⏰ Qual o horário de check-out no hotel?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">O check-out é às <strong>10h do dia 19/06 (sexta-feira)</strong>. Organizem as malas com antecedência para aproveitar o café da manhã antes da saída.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🌐 Tem Wi-Fi no hotel?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Sim! A senha será fornecida no check-in. Para trabalho com maior qualidade de conexão, recomendamos ter um plano de dados de backup.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🍔 O que é a Noite do Hambúrguer?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">É o nosso Happy Hour especial! Hambúrgueres artesanais + open bar para celebrar o time. Acontece na noite de quinta, 18/06. Horário e local no hotel serão comunicados no Slack.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚌 Como vai funcionar o transporte para Bragança?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">A saída será às <strong>8h do dia 17/06</strong> em ônibus fretado exclusivo da Inspira. O ponto de encontro será confirmado pelo Slack em breve. O trajeto leva aproximadamente 2 horas.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏷️ Como preencho a TAG na Onfly?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Na hora de finalizar sua reserva na Onfly, você verá um campo de TAG ao lado do centro de custo. Selecione <strong>Encontrão 06/2026</strong> — ela já está cadastrada na plataforma.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🍔 O que é a Noite do Hambúrguer?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">É o nosso Happy Hour especial! Hambúrgueres artesanais + open bar para celebrar o time. Acontece na noite de quinta, 18/06. Horário e local serão comunicados no Slack.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚌 Como vai funcionar o transporte para Bragança?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Saída às <strong>8h do dia 17/06</strong> em ônibus fretado exclusivo da Inspira. O ponto de encontro será confirmado pelo Slack em breve. Trajeto: ~2 horas.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚗 Posso usar o Uber Corporativo para qualquer corrida em SP?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Não. Durante o Encontrão, o Uber Corporativo é destinado, preferencialmente, a colaboradores de fora do estado e para deslocamentos relacionados ao evento — hotel, aeroporto, rodoviária, Escritório Omni e Distrito. Corridas pessoais são por conta do colaborador. Consulte a aba <strong>Uber Corporativo</strong> para mais detalhes.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏷️ Como preencho a TAG na Onfly?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Na hora de finalizar a reserva na Onfly, você verá um campo de TAG ao lado do centro de custo. Selecione <strong>Encontrão 06/2026</strong> — ela já está cadastrada.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">📲 Tenho dúvidas não respondidas. Com quem falo?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Fale no canal <strong>#encontrao-2026</strong> no Slack! O time de RH e Cultura está disponível para ajudar.</div></div>
     </div>
     <hr class="divider" />
@@ -549,7 +671,7 @@
     <div style="display:flex;flex-direction:column;gap:12px;">
       <div class="contact-card"><div class="avatar av-blue" style="width:44px;height:44px;font-size:15px;">RH</div><div class="contact-info"><div class="contact-name">Time de RH &amp; Cultura</div><div class="contact-role">Hospedagem, alocação e informações gerais</div></div><span class="contact-channel">Slack</span></div>
       <div class="contact-card"><div class="avatar av-cyan" style="width:44px;height:44px;font-size:15px;">OPS</div><div class="contact-info"><div class="contact-name">Operações</div><div class="contact-role">Passagens, Onfly, centro de custo e TAGs</div></div><span class="contact-channel">Slack</span></div>
-      <div class="contact-card"><div class="avatar av-purple" style="width:44px;height:44px;font-size:15px;">EV</div><div class="contact-info"><div class="contact-name">Equipe de Eventos</div><div class="contact-role">Agenda, Happy Hour, atividades no hotel</div></div><span class="contact-channel">Slack</span></div>
+      <div class="contact-card"><div class="avatar av-purple" style="width:44px;height:44px;font-size:15px;">FIN</div><div class="contact-info"><div class="contact-name">Finance — #support-finance</div><div class="contact-role">Uber Corporativo, reembolsos e dúvidas financeiras</div></div><span class="contact-channel">Slack</span></div>
     </div>
   </div>
 
