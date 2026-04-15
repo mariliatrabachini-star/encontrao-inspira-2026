@@ -26,14 +26,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: var(--font-primary); background-color: var(--surface-secondary); color: var(--text-primary); min-height: 100vh; }
 
-    .hero { background: linear-gradient(135deg, var(--navy-10) 0%, var(--navy-6) 50%, var(--navy-3) 100%); color: var(--text-invert); padding: 48px 24px 0; text-align: center; position: relative; overflow: hidden; }
+    .hero { background: linear-gradient(135deg, var(--navy-10) 0%, var(--navy-6) 50%, var(--navy-3) 100%); color: var(--text-invert); padding: 28px 24px 0; text-align: center; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 20% 50%, rgba(19,171,245,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(39,228,221,0.12) 0%, transparent 45%); pointer-events: none; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(19,171,245,0.15); border: 1px solid rgba(19,171,245,0.3); border-radius: var(--br-full); padding: 4px 16px; font-size: 12px; font-weight: 500; color: var(--brand-blue); letter-spacing: 0.5px; margin-bottom: 20px; position: relative; }
-    .hero-title { font-size: clamp(32px, 5vw, 52px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 12px; position: relative; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(19,171,245,0.15); border: 1px solid rgba(19,171,245,0.3); border-radius: var(--br-full); padding: 4px 16px; font-size: 12px; font-weight: 500; color: var(--brand-blue); letter-spacing: 0.5px; margin-bottom: 12px; position: relative; }
+    .hero-title { font-size: clamp(26px, 4vw, 40px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 8px; position: relative; }
     .hero-title span { background: linear-gradient(90deg, var(--brand-blue), var(--brand-cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .countdown-bar { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 32px; }
+    .countdown-bar { background: rgba(255,255,255,0.05); border-top: 1px solid rgba(255,255,255,0.08); padding: 14px 24px; display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 20px; }
     .countdown-item { text-align: center; }
-    .countdown-num { font-size: 36px; font-weight: 700; color: var(--brand-blue); line-height: 1; display: block; }
+    .countdown-num { font-size: 28px; font-weight: 700; color: var(--brand-blue); line-height: 1; display: block; }
     .countdown-label { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.8px; }
 
     .tabs-wrapper { background: #fff; border-bottom: 1px solid var(--border-faint); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(1,27,54,0.06); }
@@ -199,7 +199,7 @@
     .tab-panel.active > *:nth-child(3) { animation-delay: 0.1s; }
 
     @media (max-width: 640px) {
-      .hero { padding: 32px 16px 0; }
+      .hero { padding: 20px 16px 0; }
       .main { padding: 20px 16px; }
       .tabs-inner { padding: 0 16px; }
       .tab-btn { padding: 12px 14px; font-size: 12px; }
@@ -428,7 +428,7 @@
     <h2 class="section-title">Uber Corporativo 🚗</h2>
     <p class="section-desc">Combinados importantes sobre o uso do Uber Corporativo Inspira durante o Encontrão. Contamos com o bom senso e a colaboração de todos!</p>
 
-    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>Dúvidas sobre o uso corporativo? Entre em contato com o time de Finance pelo canal <strong>#support-finance</strong> no Slack.</div></div>
+    <div class="alert alert-info"><span class="alert-icon">ℹ️</span><div>Dúvidas sobre o uso corporativo? Entre em contato com o time de Finance pelo canal <a href="https://inspira-legal.slack.com/archives/C0A124BKBPA" target="_blank" style="color:var(--navy-3);font-weight:600;">#support-finance</a> no Slack.</div></div>
 
     <h3 style="font-size:17px;font-weight:600;color:var(--text-primary);margin-bottom:16px;">📋 Combinados para o Encontrão</h3>
 
@@ -488,7 +488,7 @@
         <div class="card-title">Quando a conta corporativa falhar</div>
         <div class="card-body">Caso o app falhe ou não processe a cobrança via perfil corporativo:<br><br>
           1. Realize o pagamento com seu perfil pessoal.<br>
-          2. Solicite reembolso ao time de Finanças (<strong>#support-finance</strong>), anexando o comprovante e o contexto da viagem.</div>
+          2. Solicite reembolso ao time de Finanças (<a href="https://inspira-legal.slack.com/archives/C0A124BKBPA" target="_blank" style="color:var(--navy-3);font-weight:600;">#support-finance</a>), anexando o comprovante e o contexto da viagem.</div>
       </div>
       <div class="card">
         <div style="font-size:20px;margin-bottom:10px;">🛡️</div>
@@ -625,30 +625,30 @@
   <div class="tab-panel" id="tab-recados">
     <h2 class="section-title">Recados</h2>
     <p class="section-desc">Comunicados importantes sobre o Encontrão. Os recados originais estão no Slack — acesse pelos links abaixo.</p>
-    <div class="alert alert-info"><span class="alert-icon">💬</span><div>Esta página agrega os principais comunicados do canal <strong>#encontrao-2026</strong> no Slack.</div></div>
+    <div class="alert alert-info"><span class="alert-icon">💬</span><div>Esta página centraliza os principais comunicados do Encontrão. Para dúvidas, fale com o time pelo canal <a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" style="color:var(--navy-3);font-weight:600;">#support-people</a> no Slack.</div></div>
     <div style="display:flex;flex-direction:column;gap:16px;">
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-blue">RH</div><div><div class="recado-name">Time de RH &amp; Cultura</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-blue" style="font-size:11px;">📋 Geral</span></div>
         <div class="recado-text">Pessoal, o Encontrão 2026 acontecerá de <strong>15 a 19 de junho</strong>! Este é o nosso segundo encontro presencial do ano. 💙</div>
-        <a href="#" class="recado-link">🔗 Ver no Slack</a>
+        <a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-cyan">EV</div><div><div class="recado-name">Equipe de Eventos</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-green" style="font-size:11px;">🍔 Happy Hour</span></div>
         <div class="recado-text">Destaque da semana: <strong>Happy Hour com Noite do Hambúrguer + Open Bar</strong> na quinta, 18/06! 🍻🍔</div>
-        <a href="#" class="recado-link">🔗 Ver no Slack</a>
+        <a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-purple">OPS</div><div><div class="recado-name">Operações</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-yellow" style="font-size:11px;">✈️ Passagens</span></div>
         <div class="recado-text">Passagens pela <strong>Onfly</strong> até <strong>31/05/2026</strong>. Use a TAG <strong>Encontrão 06/2026</strong> e avise sua liderança para aprovar no prazo!</div>
-        <a href="#" class="recado-link">🔗 Ver no Slack</a>
+        <a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="recado-link">🔗 Ver no Slack</a>
       </div>
       <div class="recado-card">
         <div class="recado-meta"><div class="recado-author"><div class="avatar av-blue">RH</div><div><div class="recado-name">Time de RH &amp; Cultura</div><div class="recado-date">A confirmar</div></div></div><span class="timeline-tag tag-cyan" style="font-size:11px;">🏨 Hospedagem</span></div>
         <div class="recado-text">De 17 a 19/06 todo o time estará no <strong>Hotel Villa Santo Agostinho</strong>, Bragança Paulista. Check-out às <strong>10h</strong> do dia 19/06.</div>
-        <a href="#" class="recado-link">🔗 Ver no Slack</a>
+        <a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="recado-link">🔗 Ver no Slack</a>
       </div>
     </div>
-    <div style="margin-top:24px;"><a href="#" class="btn btn-primary">💬 Abrir canal no Slack</a></div>
+    <div style="margin-top:24px;"><a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="btn btn-primary">💬 Falar com o time no Slack</a></div>
   </div>
 
   <!-- FAQ -->
@@ -666,14 +666,14 @@
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚌 Como vai funcionar o transporte para Bragança?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Saída às <strong>8h do dia 17/06</strong> em ônibus fretado exclusivo da Inspira. O ponto de encontro será confirmado pelo Slack em breve. Trajeto: ~2 horas.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🚗 Posso usar o Uber Corporativo para qualquer corrida em SP?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Não. Durante o Encontrão, o Uber Corporativo é destinado, preferencialmente, a colaboradores de fora do estado e para deslocamentos relacionados ao evento — hotel, aeroporto, rodoviária e escritório. Corridas pessoais são por conta do colaborador. Consulte a aba <strong>Uber Corporativo</strong> para mais detalhes.</div></div>
       <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">🏷️ Como preencho a TAG na Onfly?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Na hora de finalizar a reserva na Onfly, você verá um campo de TAG ao lado do centro de custo. Selecione <strong>Encontrão 06/2026</strong> — ela já está cadastrada.</div></div>
-      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">📲 Tenho dúvidas não respondidas. Com quem falo?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Fale no canal <strong>#encontrao-2026</strong> no Slack! O time de RH e Cultura está disponível para ajudar.</div></div>
+      <div class="faq-item"><div class="faq-question" onclick="toggleFaq(this)"><span class="faq-q-text">📲 Tenho dúvidas não respondidas. Com quem falo?</span><span class="faq-chevron">⌄</span></div><div class="faq-answer">Mande mensagem no canal <a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" style="color:var(--navy-3);font-weight:600;">#support-people</a> no Slack! O time de RH e Cultura está disponível para ajudar.</div></div>
     </div>
     <hr class="divider" />
     <h3 style="font-size:18px;font-weight:600;margin-bottom:20px;color:var(--text-primary);">📞 Contatos da Organização</h3>
     <div style="display:flex;flex-direction:column;gap:12px;">
-      <div class="contact-card"><div class="avatar av-blue" style="width:44px;height:44px;font-size:15px;">RH</div><div class="contact-info"><div class="contact-name">Time de RH &amp; Cultura</div><div class="contact-role">Hospedagem, alocação e informações gerais</div></div><span class="contact-channel">Slack</span></div>
-      <div class="contact-card"><div class="avatar av-cyan" style="width:44px;height:44px;font-size:15px;">OPS</div><div class="contact-info"><div class="contact-name">Operações</div><div class="contact-role">Passagens, Onfly, centro de custo e TAGs</div></div><span class="contact-channel">Slack</span></div>
-      <div class="contact-card"><div class="avatar av-purple" style="width:44px;height:44px;font-size:15px;">FIN</div><div class="contact-info"><div class="contact-name">Finance — #support-finance</div><div class="contact-role">Uber Corporativo, reembolsos e dúvidas financeiras</div></div><span class="contact-channel">Slack</span></div>
+      <div class="contact-card"><div class="avatar av-blue" style="width:44px;height:44px;font-size:15px;">RH</div><div class="contact-info"><div class="contact-name">Time de RH &amp; Cultura</div><div class="contact-role">Hospedagem, alocação e informações gerais</div></div><a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="contact-channel" style="text-decoration:none;">#support-people</a></div>
+      <div class="contact-card"><div class="avatar av-cyan" style="width:44px;height:44px;font-size:15px;">OPS</div><div class="contact-info"><div class="contact-name">Operações</div><div class="contact-role">Passagens, Onfly, centro de custo e TAGs</div></div><a href="https://inspira-legal.slack.com/archives/C09T2AUKE0P" target="_blank" class="contact-channel" style="text-decoration:none;">#support-people</a></div>
+      <div class="contact-card"><div class="avatar av-purple" style="width:44px;height:44px;font-size:15px;">FIN</div><div class="contact-info"><div class="contact-name">Finance</div><div class="contact-role">Uber Corporativo, reembolsos e dúvidas financeiras</div></div><a href="https://inspira-legal.slack.com/archives/C0A124BKBPA" target="_blank" class="contact-channel" style="text-decoration:none;">#support-finance</a></div>
     </div>
   </div>
 
